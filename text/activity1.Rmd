@@ -1,0 +1,37 @@
+---
+output: html_document
+---
+
+<!-- The following script makes it possible to use the mhchem -->
+<!-- latex package in a .Rmd file and to knit it into an .html file -->
+<!-- the font size is scaled to 90% to match text -->
+
+```{=html}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+}
+});
+MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90 }, 
+        SVG: { linebreaks: { automatic:true } }, 
+ });
+</script>
+```
+
+<!-- text for activity 1 -->
+
+#### Sampling Grid
+
+An important tool for implementing a sampling strategy is a grid that divides the possible sites for collecting samples into discrete cells from which we may draw individual samples. The sampling grid on the right, for example, has 324 cells arranged in 18 rows and in 18 columns. The dimension of the grid might represent spatial or temporal information, such as the distance between sampling locations or the elapsed time between samples.
+
+#### Random Sampling
+
+In a random sampling plan, perhaps the simplest sampling strategy, a random number generator is used to determine from which cells you will draw samples. Rolling two 18-sided dice, for example, gives the row and the column from which to draw a sample. The only requirement for a random sampling is that you are equally likely to draw a sample from each cell in the sampling grid.
+
+**Exercise 1**. The controls on the upper right allow you to choose how many individual sites (cells) you will sample, the number of replicate samples you will analyze from each site, and whether the results of the analysis of these samples are displayed quantitatively as numerical results and visually as a shading of blue. The mean and the standard deviation for the samples are displayed above the grid. Select the radio button to display results and describe how changing the number of sites and the number of replicates affects the mean and standard deviation for the samples. 
+
+**Exercise 2**. What is your best estimate for the mean and the standard deviation for all 342 sample sites based on your results for several different random samples drawn using the sample grid?
+
+**Exercise 3**. You should notice that there is a pattern to your results. Describe this pattern and explain how it manifests itself in the reported mean and/or standard deviation.

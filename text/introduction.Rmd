@@ -1,0 +1,36 @@
+---
+output: html_document
+---
+
+<!-- The following script makes it possible to use the mhchem -->
+
+<!-- latex package in a .Rmd file and to knit it into an .html file -->
+
+<!-- the font size is scaled to 90% to match text -->
+
+```{=html}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+}
+});
+MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90 }, 
+        SVG: { linebreaks: { automatic:true } }, 
+ });
+</script>
+```
+<!-- text for introduction -->
+
+The goal of a quantitative analysis is to report an analyte's concentration in a sample with both accuracy (How close is our mean result to the analyte's true concentration?) and with precision (How much variability is there in our results?). To evaluate accuracy and precision, we consider determinate (systematic) errors that affect accuracy, such as failing to calibrate a spectrometer, and we consider indeterminate (random) errors, such as the noise in a spectrometer's signal. Equally important, but often overlooked, are determinate and indeterminate errors associated with collecting samples.
+
+The two photos on the right illustrate the importance of sampling. The upper photo shows a sample of the acid-base indicator erythrosin B (or EB, for short). Because erythrosin B is unstable in aqueous solutions---which makes it impossible to prepare and store in solution form---it is dispensed by combining it with NaCl and shaking to coat the salt crystals. The pile of EB-coated NaCl in the upper photo appears homogeneous, and, as seen in the lower photo, it continues to appear reasonably homogeneous even when we zoom in on the pile. 
+
+The analysis of the bulk sample for EB is described in the literature (see the wrapping up tab for the reference). Individual sub-samples were collected, brought into solution, and analyzed spectrophotometrically. Although the result of the analysis was accurate---an experimental mean of 0.118 %w/w erythrosin B vs. a known value of 0.116 %w/w erythrosin B---the 95% confidence interval, at 15% of the experimental mean, was surprisingly large.
+
+A careful analysis of the bulk sample allows us to partition the overall variance of the analysis into the variance due to the lack of homogeneity between individual sub-samples, the variance associated with preparing these sub-samples for analysis, and the variance associated with analyzing the sub-samples
+
+$$\sigma_\text{overall}^2 = \sigma_\text{sampling}^2 + \sigma_\text{preparing}^2 + \sigma_\text{analyzing}^2$$
+
+Despite the reagent's appearance of homogeneity, 99% of the overall variance in the analysis of the bulk sample is the result of a lack of homogeneity at the level of individual sub-samples. In this module you will consider and evaluate several strategies for collecting samples to improve accuracy and precision. 
