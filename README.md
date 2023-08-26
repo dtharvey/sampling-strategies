@@ -6,4 +6,4 @@ To run locally, install the packages shiny and shinythemes (if not already insta
 
 library(shiny)
 
-shiny::runGitHub("acid-base-titration","dtharvey")
+shiny::runGitHub("sampling-strategies","dtharvey")
