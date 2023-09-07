@@ -384,7 +384,7 @@ shinyServer(function(input, output, session){
     smeth = input$act4_smeth
     maxerror = input$act4_maxerr
     nrep = 10
-    ncol = 10
+    nsamp = 10
     
     error = matrix(data = NA, nrow = nrep, ncol = nsamp)
     for (i in 1:nrep){
