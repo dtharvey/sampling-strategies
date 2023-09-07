@@ -23,15 +23,15 @@ MathJax.Hub.Config({
 <!-- text for wrapping up -->
 #### Source of Data
 
-The values in each of the sampling grid's 324 cells are generated anew with each change in the number of sampling sites or the number of replicates. Values are calculated using `R`'s `rnorm` function, which draws samples at random from a normal distribution defined by its mean and its standard deviation. For stratum 1 the mean is 55 and the standard deviation is 12; for stratum 2 the mean is 28 and the standard deviation is 3.0; and, for stratum 3 the mean is 9 and the standard deviation is 1.7. The overall mean and standard deviation for all 324 cells is 23 and 17, respectively.
+The values in each of the sampling grid's 324 cells are generated anew with each change in the number of sampling sites or the number of replicates. Values are calculated using `R`'s `rnorm()` function, which draws samples at random from a normal distribution defined by its mean and its standard deviation. For stratum 1 the mean is 55 and the standard deviation is 12; for stratum 2 the mean is 28 and the standard deviation is 3.0; and, for stratum 3 the mean is 9 and the standard deviation is 1.7. The overall mean and standard deviation for all 324 cells is 23 and 17, respectively.
 
 #### Other Sampling Strategies
 
 There are many other sampling strategies, two of which are illustrated on the right. A random sampling of the whole grid, or a random sampling of individual strata may leave areas of the sampling grid untouched. In a systematic sampling, we use a repeating pattern that ensures that an equal number of samples are drawn from each section of the sampling grid; in this case, for example, each of the four main quadrants has 11 samples. 
 
-In judgmental sampling, we use prior knowledge of the site to help guide where we collect samples. For example, when monitoring for leakage from a storage site for hazardous waste, we might focus most of our samples in that part of the grid adjacent to the source of waste---in this case, in the southwest corner of the sampling grid---and then collect additional samples in a pattern that will allow us to identify if a broader spread of the waste has occurred. 
+In judgmental sampling, we use prior knowledge of the site to help guide where we collect samples. For example, when monitoring for leakage from a storage site for hazardous waste, we might focus most of our samples in that part of the grid adjacent to the source of waste---in this case, the southwest corner of the sampling grid---and then collect additional samples in a pattern that will allow us to identify if a broader spread of the waste has occurred. 
 
-In our consideration of stratified sampling, each stratum was sampled proportionally, which makes it easy to calculate an overall mean. Using the description above regarding the mean values for the three strata, and assuming, for simplicity, that each individual sample's value equals its mean, then a proportional stratified sampling using samples of size 9:18:27 gives an overall mean of
+In our consideration of stratified sampling, each stratum was sampled proportionally, which makes it easy to calculate an overall mean. Using the description above regarding the true mean values for the three strata, and assuming, for simplicity, that each individual sample's value equals its mean, then a proportional stratified sampling using samples of size 9:18:27 gives an overall mean of
 
 $$\frac{(55 \times 9) + (28 \times 18) + (9 \times 27)}{9 + 18 + 27} = \frac{1242}{54} = 23$$
 
@@ -45,4 +45,4 @@ Another strategy for acquiring samples is convenience sampling, in which the eas
 
 You can read more about sampling strategies in [Chapter 7 of *Analytical Chemistry 2.1*](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/07%3A_Obtaining_and_Preparing_Samples_for_Analysis), which is available through the [LibreText](https://libretexts.org/) project.
 
-The experiment described in the introduction is [Harvey, D. T. "Two Experiments Illustrating the Importance of Sampling in a Quantitative Chemical Analysis," **2002**, *79*, 360--363](https://doi.org/10.1021/ed079p360).
+The experiment described in the introduction is [Harvey, D. T. "Two Experiments Illustrating the Importance of Sampling in a Quantitative Chemical Analysis," **2002**, *79*, 360--363](https://doi.org/10.1021/ed079p360). Another useful experiment is [Dickson-Karn, N. M.; Orosz, S. "Implementation of a Python Program to Simulate Sampling, *J. Chem. Educ.* **2021**, *98*, 3251-3257](https://doi.org/10.1021/acs.jchemed.1c00597).

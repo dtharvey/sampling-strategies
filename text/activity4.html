@@ -11,7 +11,7 @@
 
 
 
-<title>wrapup.knit</title>
+<title>activity4.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -366,69 +366,36 @@ MathJax.Hub.Config({
         SVG: { linebreaks: { automatic:true } }, 
  });
 </script>
-<!-- text for wrapping up -->
-<div id="source-of-data" class="section level4">
-<h4>Source of Data</h4>
-<p>The values in each of the sampling grid’s 324 cells are generated
-anew with each change in the number of sampling sites or the number of
-replicates. Values are calculated using <code>R</code>’s
-<code>rnorm()</code> function, which draws samples at random from a
-normal distribution defined by its mean and its standard deviation. For
-stratum 1 the mean is 55 and the standard deviation is 12; for stratum 2
-the mean is 28 and the standard deviation is 3.0; and, for stratum 3 the
-mean is 9 and the standard deviation is 1.7. The overall mean and
-standard deviation for all 324 cells is 23 and 17, respectively.</p>
-</div>
-<div id="other-sampling-strategies" class="section level4">
-<h4>Other Sampling Strategies</h4>
-<p>There are many other sampling strategies, two of which are
-illustrated on the right. A random sampling of the whole grid, or a
-random sampling of individual strata may leave areas of the sampling
-grid untouched. In a systematic sampling, we use a repeating pattern
-that ensures that an equal number of samples are drawn from each section
-of the sampling grid; in this case, for example, each of the four main
-quadrants has 11 samples.</p>
-<p>In judgmental sampling, we use prior knowledge of the site to help
-guide where we collect samples. For example, when monitoring for leakage
-from a storage site for hazardous waste, we might focus most of our
-samples in that part of the grid adjacent to the source of waste—in this
-case, the southwest corner of the sampling grid—and then collect
-additional samples in a pattern that will allow us to identify if a
-broader spread of the waste has occurred.</p>
-<p>In our consideration of stratified sampling, each stratum was sampled
-proportionally, which makes it easy to calculate an overall mean. Using
-the description above regarding the true mean values for the three
-strata, and assuming, for simplicity, that each individual sample’s
-value equals its mean, then a proportional stratified sampling using
-samples of size 9:18:27 gives an overall mean of</p>
-<p><span class="math display">\[\frac{(55 \times 9) + (28 \times 18) +
-(9 \times 27)}{9 + 18 + 27} = \frac{1242}{54} = 23\]</span></p>
-<p>In equal-size stratified sampling, each stratum is sampled an equal
-number of times. Because the individual strata are not equal in size,
-each stratum’s average result is weighted by a factor equal to the
-fraction of all sites belong to that stratum. For example, if we sample
-each stratum 12 times, then the overall mean is</p>
-<p><span class="math display">\[\frac{(55 \times 54) + (28 \times 108) +
-(9 \times 162)}{324} = \frac{7452}{324} = 23\]</span></p>
-<p>Another strategy for acquiring samples is convenience sampling, in
-which the ease of obtaining samples is used to make decisions about
-where to sample and where to not sample. An example of where convenience
-sampling is necessary is when access to private property prevents you
-from acquiring a sample.</p>
-</div>
-<div id="additional-resources" class="section level4">
-<h4>Additional Resources</h4>
-<p>You can read more about sampling strategies in <a href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/07%3A_Obtaining_and_Preparing_Samples_for_Analysis">Chapter
-7 of <em>Analytical Chemistry 2.1</em></a>, which is available through
-the <a href="https://libretexts.org/">LibreText</a> project.</p>
-<p>The experiment described in the introduction is <a href="https://doi.org/10.1021/ed079p360">Harvey, D. T. “Two Experiments
-Illustrating the Importance of Sampling in a Quantitative Chemical
-Analysis,” <strong>2002</strong>, <em>79</em>, 360–363</a>. Another
-useful experiment is <a href="https://doi.org/10.1021/acs.jchemed.1c00597">Dickson-Karn, N. M.;
-Orosz, S. “Implementation of a Python Program to Simulate Sampling,
-<em>J. Chem. Educ.</em> <strong>2021</strong>, <em>98</em>,
-3251-3257</a>.</p>
-</div>
+<!-- text for activity 4 -->
+<p>The overall uncertainty in an analysis, <span class="math inline">\(e_{analysis}\)</span> is a function of the
+standard deviations for sampling, <span class="math inline">\(s_{samp}\)</span>, and for the analytical method,
+<span class="math inline">\(s_{meth}\)</span>, the number of samples,
+<span class="math inline">\(n_{samp}\)</span>, and the number of
+replicate analyses per sample, <span class="math inline">\(n_{rep}\)</span>, and the confidence interval.</p>
+<p><span class="math display">\[e_{analysis} = t \times
+\sqrt{\frac{s_{samp}^2}{n_{samp}} + \frac{s_{meth}^2}{n_{samp} \times
+n_{rep}}}\]</span></p>
+<p>The figure on the right shows, in blue italics, those combinations of
+<span class="math inline">\(s_{samp}\)</span>, <span class="math inline">\(s_{meth}\)</span>, <span class="math inline">\(n_{samp}\)</span>, and <span class="math inline">\(n_{rep}\)</span> that provide an <span class="math inline">\(e_{analysis}\)</span> that is smaller than a
+desired maximum error given a choice of confidence interval.</p>
+<p><strong>Exercise 1</strong>. Explore how the choice of <span class="math inline">\(s_{samp}\)</span>, <span class="math inline">\(s_{meth}\)</span>, <span class="math inline">\(n_{samp}\)</span>, <span class="math inline">\(n_{rep}\)</span>, and the size of the confidence
+interval affects <span class="math inline">\(e_{analysis}\)</span>.</p>
+<p><strong>Exercise 2</strong>. The cell for <span class="math inline">\(n_{samp} = 1\)</span> and <span class="math inline">\(n_{rep} = 1\)</span> contains the string
+<code>Inf</code> for all combinations of <span class="math inline">\(s_{samp}\)</span>, <span class="math inline">\(s_{meth}\)</span>, and confidence intervals.
+<code>Inf</code> means the error is infinite. Why is this?</p>
+<p><strong>Exercise 3</strong>. Set the standard deviations for sampling
+and for the method to 1, the maximum error to 2, and the confidence
+interval to 95%. Note that the error is 1.24 if you analyze two samples,
+five times each, and 1.75 if you analyze five samples, two times each.
+Both approaches use 10 measurements. Why are their errors different from
+each other?</p>
+<p><strong>Exercise 3</strong>. For any <span class="math inline">\(s_{samp}\)</span>, <span class="math inline">\(s_{meth}\)</span>, and confidence interval, there
+are many combinations of <span class="math inline">\(n_{samp}\)</span>
+and <span class="math inline">\(n_{rep}\)</span> that provide an
+acceptable error. Under what conditions might you choose to collect
+fewer samples and analyze each more times, and under what conditions
+might you choose to collect many samples and analyze each just a few
+times?</p>
 
 
 

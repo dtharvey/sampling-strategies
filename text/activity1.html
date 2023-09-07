@@ -367,41 +367,43 @@ MathJax.Hub.Config({
  });
 </script>
 <!-- text for activity 1 -->
-<div id="sampling-grid" class="section level4">
-<h4>Sampling Grid</h4>
 <p>An important tool for implementing a sampling strategy is a grid that
-divides the possible sites for collecting samples into discrete cells
-from which we may draw individual samples. The sampling grid on the
-right, for example, has 324 cells arranged in 18 rows and in 18 columns.
-The dimension of the grid might represent spatial or temporal
-information, such as the distance between sampling locations or the
-elapsed time between samples.</p>
-</div>
-<div id="random-sampling" class="section level4">
-<h4>Random Sampling</h4>
-<p>In a random sampling plan, perhaps the simplest sampling strategy, a
-random number generator is used to determine from which cells you will
-draw samples. Rolling two 18-sided dice, for example, gives the row and
-the column from which to draw a sample. The only requirement for a
-random sampling is that you are equally likely to draw a sample from
-each cell in the sampling grid.</p>
-<p><strong>Exercise 1</strong>. The controls on the upper right allow
-you to choose how many individual sites (cells) you will sample, the
-number of replicate samples you will analyze from each site, and whether
-the results of the analysis of these samples are displayed
-quantitatively as numerical results and visually as a shading of blue.
-The mean and the standard deviation for the samples are displayed above
-the grid. Select the radio button to display results and describe how
-changing the number of sites and the number of replicates affects the
-mean and standard deviation for the samples.</p>
-<p><strong>Exercise 2</strong>. What is your best estimate for the mean
-and the standard deviation for all 342 sample sites based on your
-results for several different random samples drawn using the sample
-grid?</p>
-<p><strong>Exercise 3</strong>. You should notice that there is a
-pattern to your results. Describe this pattern and explain how it
-manifests itself in the reported mean and/or standard deviation.</p>
-</div>
+divides the the bulk sample into smaller units from which we may draw
+individual samples. The sampling grid on the right, for example, has 324
+cells arranged in 18 rows and in 18 columns that may represent either
+spatial, temporal, or physical information. The controls above the grid
+allow you to explore where samples are collected (random vs. stratified)
+from how many sites to collect samples. In a random sampling, every site
+is equally likely to be selected; in a stratified sampling, the sites or
+samples are divided into two or more groups (called strata) and sampled
+in a way that maintains their relative proportion to each other.</p>
+<p><strong>Exercise 1</strong>. Propose 3–5 examples of analytical
+problems where the basic sampling grid is useful. Here is an example to
+get you started: you could overlay the grid on an agricultural field to
+define where to gather samples for a study to determine the amount of
+nitrogen in the field following the application of fertilizer.</p>
+<p><strong>Exercise 2</strong>. For a random sampling, the slider allows
+you to choose how many individual sites (cells) you will sample. The
+mean and the standard deviation for the samples are displayed above the
+grid and individual results are given in the grid both numerically and
+visually. How are the mean and the standard deviation affected by the
+number of samples you analyze?</p>
+<p><strong>Exercise 3</strong>. For a stratified sampling, the sampling
+grid is divided into three groups (strata), and samples are collected
+randomly from within each stratum. The slider sets the number of samples
+for the smallest of the three strata. When the slider is set to 3, how
+many samples will you collect from each of the strata? Why does this
+relationship make sense?</p>
+<p><strong>Exercise 4</strong>. For a stratified sampling, the mean and
+the standard deviation of the strata are listed in the order smallest
+stratum/intermediate stratum/largest stratum; the overall mean is listed
+below the grid. The results for individual samples appear in the grid
+both numerically and visually. How are the mean and the standard
+deviation affected by the number of samples? How do they compare to a
+random sampling.</p>
+<p><strong>Exercise 5</strong>. For a stratified sampling, set the
+number of sites to 10 and show that the individual means for the three
+strata are consistent with the overall mean.</p>
 
 
 

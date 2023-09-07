@@ -29,7 +29,7 @@ ui = navbarPage("AC 3.0: Sampling Strategies",
           )
       )),  
      
-     tabPanel("Random Sampling",
+     tabPanel("Where to Collect Samples",
       fluidRow(
         column(width = 6,
           wellPanel(
@@ -38,23 +38,20 @@ ui = navbarPage("AC 3.0: Sampling Strategies",
         column(width = 6,
           align = "center",
           splitLayout(
-            sliderInput("act1_size", label = "number of sample sites",
-                        min = 3, max = 30, value = 9, step = 1, 
-                        ticks = FALSE, width = "150px"),
-            sliderInput("act1_reps", 
-                         label = "number of replicates per site",
-                         min = 1, max = 5, value = 1, step = 1, 
-                        ticks = FALSE),
-            radioButtons("act1_display",
-                         label = "display results of sampling",
-                         choices = c("yes", "no"), selected = "no",
-                         inline = TRUE)
-          ),
+            selectInput("grid_type","sampling grid",
+                        choices = c("basic sampling grid","random sampling",
+                                    "stratified sampling"),
+                        selected = "basic sampling grid",
+                        selectize = FALSE),
+            sliderInput("sample_size", label = "number of random samples",
+                        min = 1, max = 30, value = 1, step = 1, 
+                        ticks = FALSE, width = "300px"),
+            ),
           plotOutput("act1_plot", height = "700px")
           )
       )),
      
-     tabPanel("Stratified Sampling",
+     tabPanel("How Much Sample to Collect",
               fluidRow(
                 column(width = 6,
                        wellPanel(
@@ -63,16 +60,62 @@ ui = navbarPage("AC 3.0: Sampling Strategies",
                 column(width = 6,
                        align = "center",
                        splitLayout(
-                         sliderInput("act2_size", 
-                                     label = "number of sample sites for stratum 1",
-                                     min = 3, max = 10, value = 3, step = 1, 
-                                     ticks = FALSE),
-                         sliderInput("act2_reps", 
-                                     label = "number of replicates per site",
-                                     min = 1, max = 5, value = 1, step = 1, 
-                                     ticks = FALSE)
+                         sliderInput("act2_n","sample size (n)",
+                                     min = 10, max = 1000, value = 10,
+                                     step = 10, ticks = FALSE),
+                         sliderInput("act2_p", "fraction of particles w/analyte (p)",
+                                     min = 0.01, max = 0.99, value = 0.50,
+                                     step = 0.01, ticks = FALSE)
                        ),
-                       plotOutput("act2_plot", height = "700px")
+                       plotOutput("act2_plot", height = "500px")
+                )
+              )),
+     
+     tabPanel("How Many Samples to Collect",
+              fluidRow(
+                column(width = 6,
+                       wellPanel(
+                         includeHTML("text/activity3.html")
+                       )),
+                column(width = 6,
+                       align = "center",
+                       splitLayout(
+                         radioButtons("act3_ci", "confidence interval",
+                                     choiceNames = c("80%", "90%","95%","99%"),
+                                     choiceValues = c(80, 90,95,99),
+                                     selected = 95, inline = FALSE),
+                         sliderInput("act3_samplesize","maximum samples",
+                                     min = 1, max = 100, value = 20,
+                                     step = 1, ticks = FALSE)
+                       ),
+                       plotOutput("act3_plota", height = "125px"),
+                )
+              )),
+     
+     tabPanel("How Many Replicates to Run",
+              fluidRow(
+                column(width = 6,
+                       wellPanel(
+                         includeHTML("text/activity4.html")
+                       )),
+                column(width = 6,
+                       align = "center",
+                       splitLayout(
+                         radioButtons("act4_ci", "confidence interval",
+                                      choiceNames = c("80%", "90%","95%","99%"),
+                                      choiceValues = c(80, 90,95,99),
+                                      selected = 95, inline = FALSE),
+                         sliderInput("act4_ssamp", "st dev for sampling",
+                                     min = 0.1, max = 2, value = 1, 
+                                     step = 0.1, ticks = FALSE, width = "150px"),
+                         sliderInput("act4_smeth", "st dev for method",
+                                     min = 0.1, max = 2, value = 1,
+                                     step = 0.1, ticks = FALSE, width = "150px"),
+                         sliderInput("act4_maxerr", "maximum error",
+                                     min = 0.1, max = 2, value = 1,
+                                     step = 0.1, ticks = FALSE, width = "150px")
+                       ),
+                       plotOutput("act4_plot", height = "600px")
                 )
               )),
      

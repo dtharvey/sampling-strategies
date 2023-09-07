@@ -22,14 +22,15 @@ MathJax.Hub.Config({
 
 <!-- text for activity 2 -->
 
-Did you notice that the sample grid on the previous tab is divided into three different types of results, suggesting three unique types of samples: 54 high concentration sample sites in columns 1--3; 108 intermediate concentration sample sites in columns 4--9; and 162 low concentration sample sites in columns 10--18. We call these strata. If you didn't notice this, go back and take a second look!
+Suppose you have a mixture with two types of particles: those with analyte and those without analyte, where the fraction with analyte is $p$. If we sample a set of $n$ particles from this mixture, then the number of particles with analyte will follow a binomial distribution with an expected mean, $\mu$, an expected standard deviation, $\sigma$, and an expected relative standard deviation, $\sigma_{rel}$
+$$\mu = np \quad \quad \quad \sigma = \sqrt{np(1 - p)} \quad \quad \quad \sigma_{rel} = \sqrt{\frac{1 - p}{np}}$$
 
-In proportional stratified sampling, we draw random samples from each stratum in a way that maintains the relative proportion of the strata, in this case a 54:108:162, or 1:2:3 proportion. For example, if we collect five random samples from the first stratum, then we collect 10 samples from the second stratum, and 15 samples from the third stratum. 
+**Exercise 1**. The figure on the right shows 50 experiments in which $n$ particles are drawn from a binomial distribution for which $p$ is the fraction of particles with analyte. The scale on the *y*-axis reports results as a percentage so the scale is independent of $n$. Calculate the expected values for $\mu$, $\sigma$, and $\sigma_{rel}$ if $n = 10$ and $p = 0.50$ and compare to the values reported on the plot. How do the experimental results compare to the expected results?  
 
-**Exercise 1**. Use the sliders on the upper right to set the number of sites to sample from the first stratum and the number of replicates to draw from each site. The number of sites to sample from the other two strata are set to maintain the 1:2:3 proportion. The mean and standard deviation for each stratum are shown above the sampling grid, and the overall mean across all samples is given below the sampling grid. Describe how changing the number of sites and the number of replicates affects the mean and standard deviation for the individual strata. 
+**Exercise 2**. Leave the sample size at $n = 10$ and adjust $p$ from 0.01 to 0.99. Describe how $p$ affects the results. Adjust $p$ to 0.50 and adjust the sample size from $n = 10$ to $n = 1000$. Describe how $n$ affects the results.
 
-**Exercise 2**. What is your best estimate for the mean of all 342 sample sites based on your results for several stratified samples drawn using this sample grid?
+**Exercise 3**. Suppose you have a material to sample where $p = 0.05$. How many particles, $n$, do you need to collect to achieve a relative standard deviation of $\sigma_{rel} = 0.01$? 
 
-**Exercise 3**. Set the number of sites to 10 and the number of replicates to 5. Show that the individual means for the three strata are consistent with the overall mean.
+**Exercise 4**. There is no easy way to measure $n$ particles with accuracy and precision. It is easy, however, to determine the mass of $n$ particles if you know their volume and density. Calculate the mass of your $n$ particles from **Exercise 3**; assume that the particles are spherical with a radius of 0.025 cm^3^, and with a density of 1.2 g/cm^3^.
 
-**Exercise 4**. How do the results for a stratified sampling compare to a random sampling?
+**Exercise 5**. Large samples often are difficult to work with. Suppose you need to reduce the mass of a single sample from **Exercise 4** to no more than 0.50 g, by grinding the sample into smaller particles. By how much do you need to reduce the radius of the particles to achieve this? The result of this calculation is how much sample you need to collect for a single analysis.
