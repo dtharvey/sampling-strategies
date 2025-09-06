@@ -1,36 +1,19 @@
 ---
-output: html_document
+output: html_fragment
 ---
-
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-```{=html}
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
-```
 
 <!-- text for activity 2 -->
 
-Suppose you have a mixture with two types of particles: those with analyte and those without analyte, where the fraction with analyte is $p$. If we sample a set of $n$ particles from this mixture, then the number of particles with analyte will follow a binomial distribution with an expected mean, $\mu$, an expected standard deviation, $\sigma$, and an expected relative standard deviation, $\sigma_{rel}$
+Suppose you have a mixture with two types of particles: those with and those without an analyte of interest, where the fraction of particles with analyte is $p$. If we sample a set of $n$ particles from this mixture, then the number of particles with analyte follows a binomial distribution with an expected mean, $\mu$, an expected standard deviation, $\sigma$, and an expected relative standard deviation, $\sigma_{rel}$ of
+
 $$\mu = np \quad \quad \quad \sigma = \sqrt{np(1 - p)} \quad \quad \quad \sigma_{rel} = \sqrt{\frac{1 - p}{np}}$$
 
-**Exercise 1**. The figure on the right shows 50 experiments in which $n$ particles are drawn from a binomial distribution for which $p$ is the fraction of particles with analyte. The scale on the *y*-axis reports results as a percentage so the scale is independent of $n$. Calculate the expected values for $\mu$, $\sigma$, and $\sigma_{rel}$ if $n = 10$ and $p = 0.50$ and compare to the values reported on the plot. How do the experimental results compare to the expected results?  
+**Exercise 1**. The figure on the right shows 50 experiments in which $n$ particles are drawn from a binomial distribution where $p$ is the fraction of particles with analyte. The scale on the *y*-axis reports results as a percentage so the scale is independent of $n$. Calculate the expected values for $\mu$, $\sigma$, and $\sigma_{rel}$ if $n = 10$ and $p = 0.50$. How do the experimental results shown in the plot compare to the expected results?  
 
 **Exercise 2**. Leave the sample size at $n = 10$ and adjust $p$ from 0.01 to 0.99. Describe how $p$ affects the results. Adjust $p$ to 0.50 and adjust the sample size from $n = 10$ to $n = 1000$. Describe how $n$ affects the results.
 
 **Exercise 3**. Suppose you have a material to sample where $p = 0.05$. How many particles, $n$, do you need to collect to achieve a relative standard deviation of $\sigma_{rel} = 0.01$? 
 
-**Exercise 4**. There is no easy way to measure $n$ particles with accuracy and precision. It is easy, however, to determine the mass of $n$ particles if you know their volume and density. Calculate the mass of your $n$ particles from **Exercise 3**; assume that the particles are spherical with a radius of 0.025 cm^3^, and with a density of 1.2 g/cm^3^.
+**Exercise 4**. There is no easy way to count $n$ particles with accuracy and precision. It is easy, however, to determine the mass of $n$ particles if you know their volume and density. Calculate the mass of your $n$ particles from the previous exercise; assume that the particles are spherical with a radius of 0.025 cm and with a density of 1.2 g/cm^3^.
 
-**Exercise 5**. Large samples often are difficult to work with. Suppose you need to reduce the mass of a single sample from **Exercise 4** to no more than 0.50 g, by grinding the sample into smaller particles. By how much do you need to reduce the radius of the particles to achieve this? The result of this calculation is how much sample you need to collect for a single analysis.
+**Exercise 5**. Large samples are often difficult to work with. Suppose you need to reduce the mass of a single sample from the previous exercise to no more than 0.50 g, by grinding the sample into smaller particles. By how much do you need to reduce the radius of the particles to achieve this? 

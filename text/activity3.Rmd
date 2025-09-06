@@ -1,34 +1,20 @@
 ---
-output: html_document
+output: html_fragment
 ---
-
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-```{=html}
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
-```
 
 <!-- text for activity 3 -->
 
-Another important consideration is the number of samples to collect, $n_{samp}$. If the results of an analysis are normally distributed, then the confidence interval due to sampling uncertainty, $s_{samp}$, is
+Another important consideration is the number of individual samples to collect, $n_{samp}$, from a single location. If the results of an analysis are normally distributed, then the confidence interval due the uncertainty in sampling uncertainty, $s_{samp}$, is
+
 $$\mu = \bar{X} \pm \frac{ts_{samp}}{\sqrt{n_{samp}}}$$
-Rearranging and defining the sampling error, $e$, as $\left| \mu - \bar{X} \right|$ gives $n_{samp} = t^2 \times \frac{s_{samp}^2}{e^2}$. The controls on the right allow you to explore how the choice of confidence interval and the maximum number of samples affects the sampling error, $e$, relative to the standard deviation for sampling, $s_{samp}$. A ratio of $1 \times$ means that $e/s_{samp} = 1$, and a ratio of $\times/3$ means that $\frac{e}{s_{samp}} = \frac{1}{3}$.
 
-**Exercise 1**. Suppose you want to ensure that the sampling error, $e$, is no larger than the standard deviation for sampling, $s_{samp}$. For each confidence interval, how many samples do you need to collect?
+**Exercise 1**. If we define the sampling error, $e$, as $\left| \mu - \bar{X} \right|$, show that the number of samples we need to collect is
 
-**Exercise 2**. Set the maximum number of samples to 20. For each confidence interval, what is the greatest possible improvement in the sampling error relative to the standard deviation for sampling, and how many samples are needed to achieve this?
+$$n_{samp} = t^2 \times \frac{s_{samp}^2}{e^2}$$ 
+
+**Exercise 2**. The controls on the right allow you to explore how the relationship between the confidence interval and the maximum number of samples affects the sampling error, $e$, relative to the standard deviation for sampling, $s_{samp}$. A ratio of 1 means that $e/s_{samp} = 1$, and a ratio of 1/3 means that $e/s_{samp} = \frac{1}{3}$. Suppose you want to ensure that the sampling error, $e$, is no larger than the standard deviation for sampling, $s_{samp}$; that is, $e/s_{samp} = 1$. Set the maximum number of samples to 100. For each of the available confidence intervals what is the smallest number of samples you need to collect? In the figure on the right, cells shaded in blue are conditions where the number of samples needed exceeds the maximum number of samples allowed. 
+
+**Exercise 3**. Set the maximum number of samples to 20. For each confidence interval, what is the greatest possible improvement in the sampling error relative to the standard deviation for sampling, and how many samples are needed to achieve this?
 
 
 

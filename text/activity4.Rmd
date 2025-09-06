@@ -1,37 +1,19 @@
 ---
-output: html_document
+output: html_fragment
 ---
-
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-```{=html}
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
-```
 
 <!-- text for activity 4 -->
 
-The overall uncertainty in an analysis, $e_{analysis}$ is a function of the standard deviations for sampling, $s_{samp}$, and for the analytical method, $s_{meth}$, the number of samples, $n_{samp}$, and the number of replicate analyses per sample, $n_{rep}$, and the confidence interval.
+The overall uncertainty in an analysis, $e_{analysis}$ is a function of the standard deviation for sampling, $s_{samp}$, the standard deviation for the analytical method, $s_{meth}$, the number of samples, $n_{samp}$, the number of replicate analyses per sample, $n_{rep}$, and the confidence interval.
 
 $$e_{analysis} = t \times \sqrt{\frac{s_{samp}^2}{n_{samp}} + \frac{s_{meth}^2}{n_{samp} \times n_{rep}}}$$
 
-The figure on the right shows, in blue italics, those combinations of $s_{samp}$, $s_{meth}$, $n_{samp}$, and $n_{rep}$ that provide an $e_{analysis}$ that is smaller than a desired maximum error given a choice of confidence interval.
+The figure on the right shows, in blue italics, those combinations of $s_{samp}$, $s_{meth}$, $n_{samp}$, and $n_{rep}$ (all adjustable using the sliders and radio buttons) that provide an $e_{analysis}$ that is smaller than a desired maximum error given a choice of confidence interval.
 
-**Exercise 1**. Explore how the choice of $s_{samp}$, $s_{meth}$, $n_{samp}$, $n_{rep}$, and the size of the confidence interval affects $e_{analysis}$.
+**Exercise 1**. Explore how the choice of $s_{samp}$, $s_{meth}$, $n_{samp}$, $n_{rep}$, and the confidence interval affects $e_{analysis}$.
 
-**Exercise 2**. The cell for $n_{samp} = 1$ and $n_{rep} = 1$ contains the string `Inf` for all combinations of $s_{samp}$, $s_{meth}$, and confidence intervals. `Inf` means the error is infinite. Why is this?
+**Exercise 2**. The cell for $n_{samp} = 1$ and $n_{rep} = 1$ contains the string `Inf` for all combinations of $s_{samp}$, $s_{meth}$, and confidence interval. `Inf` means the error is infinite. Why is this?
 
 **Exercise 3**. Set the standard deviations for sampling and for the method to 1, the maximum error to 2, and the confidence interval to 95%. Note that the error is 1.24 if you analyze two samples, five times each, and 1.75 if you analyze five samples, two times each. Both approaches use 10 measurements. Why are their errors different from each other?
 
-**Exercise 3**. For any $s_{samp}$, $s_{meth}$, and confidence interval, there are many combinations of $n_{samp}$ and $n_{rep}$ that provide an acceptable error. Under what conditions might you choose to collect fewer samples and analyze each more times, and under what conditions might you choose to collect many samples and analyze each just a few times?
+**Exercise 4**. For any $s_{samp}$, $s_{meth}$, and confidence interval, there are many combinations of $n_{samp}$ and $n_{rep}$ that provide an acceptable error. Under what conditions might you choose to collect fewer samples and analyze each more times, and under what conditions might you choose to collect many samples and analyze each just a few times?

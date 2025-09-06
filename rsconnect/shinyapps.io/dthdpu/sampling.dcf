@@ -5,9 +5,9 @@ account: dthdpu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9687820
-bundleId: 7612169
+bundleId: 7657141
 url: https://dthdpu.shinyapps.io/sampling/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: misc
+ignoredFiles: test_code.R|misc

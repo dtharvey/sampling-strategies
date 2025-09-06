@@ -1,36 +1,6 @@
 # server for sampling strategies
 
-library(shiny)
-library(shinythemes)
-
-
-# place for data files and scripts used in server file
-
-# coordinates for field grid
-xleft = rep(seq(1,18,1),18)
-xright = xleft + 1
-ybottom = c(rep(1,18), rep(2,18), rep(3,18), rep(4,18), 
-            rep(5,18), rep(6,18), rep(7,18), rep(8,18), 
-            rep(9,18), rep(10,18), rep(11,18), rep(12,18),
-            rep(13,18), rep(14,18), rep(15,18), rep(16,28),
-            rep(17,18), rep(18,18))
-ytop = ybottom + 1
-
-# stats for stratified groups
-f_mean = 28
-f_sd = 3.03
-p_mean = 9
-p_sd = 1.73
-w_mean = 55
-w_sd = 12.0
-
-# set color scheme
-
-palette("Okabe-Ito")
-
 shinyServer(function(input, output, session){
-  
-  # code for introduction figure
   
   # code for activity 1 plot
   
@@ -45,14 +15,24 @@ shinyServer(function(input, output, session){
     observe({
       if (input$grid_type == "random sampling"){
         updateSliderInput(session, "sample_size", 
-                          max = 30, label = "number of random samples")
+                          max = 15, 
+                          label = "number of sites to sample")
       }
     })
     
     observe({
-      if (input$grid_type == "stratified sampling"){
+      if (input$grid_type == "proportional stratified sampling"){
         updateSliderInput(session, "sample_size",
-                          max = 15, label = "number of stratified samples")
+                          max = 15,
+                          label = "number of sites to sample")
+      }
+    })
+    
+    observe({
+      if (input$grid_type == "basic sampling grid"){
+        updateSliderInput(session, "sample_size",
+                          max = 15, 
+                          label = "number of sites to sample")
       }
     })
     
@@ -116,7 +96,10 @@ shinyServer(function(input, output, session){
                adj = c(0.5,0.5), cex = 1)
         }
         
-        title(main = paste0("mean of samples: ", round(mean(field_data),1), "   sd of samples: ", round(sd(field_data),1)))
+        title(main = paste0("mean of samples: ", 
+                            round(mean(field_data),1), 
+                            "   sd of samples: ", 
+                            round(sd(field_data),1)))
 
     } else {
       
@@ -161,7 +144,8 @@ shinyServer(function(input, output, session){
       text(x = 7, y = 0.5, "stratum 2")
       text(x = 14.5, y = 0.5, "stratum 3")
       
-      rect(xleft = xleft, ybottom = ybottom, xright = xright, ytop = ytop)
+      rect(xleft = xleft, ybottom = ybottom, 
+           xright = xright, ytop = ytop)
       
       # stratum 1
       repeat{
@@ -363,7 +347,7 @@ shinyServer(function(input, output, session){
     text(x = xl[4], y = yt[4] + 0.5, adj = c(0.5,0.5), cex = 1,
          labels = "number of samples needed to achieve...")
     text(x = xl + 0.5, y = yb - 0.35, adj = c(0.5,0.5), cex = 1,
-         labels = c("2X", "1X", "X/2", "X/3", "X/4", "X/5"))
+         labels = c("2", "1", "1/2", "1/3", "1/4", "1/5"))
     text(x = xl[4], y = yb[4] - 0.70, adj = c(0.5,0.5), cex = 1, 
          labels = "...a sampling error/sampling standard deviation ratio of...")
     text(x = xl + 0.5, y = yb + 0.5, adj = c(0.5,0.5), cex = 1,
