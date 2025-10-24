@@ -2,8 +2,6 @@
  
 This module introduces students to the importance of sampling. Simple random sampling and proportional stratified sampling are presented using a sampling grid with 18 rows and 18 columns.
 
-To run locally, install the packages shiny and shinythemes (if not already installed), and enter the following two lines into the console:
+required packages: `shiny`, `shinythemes`
 
-library(shiny)
-
-shiny::runGitHub("sampling-strategies","dtharvey")
+to run locally in a browser window enter `shiny::runGitHub("sampling-strategies","dtharvey", launch.browser = TRUE)` in the console
